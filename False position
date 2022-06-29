@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+double e=0.01,x0;
+
+
+double func( double x)
+{
+    return x*x+x-2;
+}
+double False_position(double x1,double x2)
+{
+    int i=0;
+    double l=x1;
+    while(1){
+      x0=x1-(func(x1)*(x2-x1))/(func(x2)-func(x1));
+      if(func(x0)*func(x1)<0){
+        x2=x0;
+      }
+      else{
+        x1=x0;
+      }
+      i++;
+      cout<<"Iteration NO "<<i<<" : "<<x0<<endl;
+      if(abs(l-x0)<e){
+            break;
+      }
+      l=x0;
+
+   }
+   cout<<"Root is : "<<x0<<endl;
+
+}
+int main()
+{
+    double a,b;
+    a=0;b=2;
+   False_position(a,b);
+
+
+}
+
+
