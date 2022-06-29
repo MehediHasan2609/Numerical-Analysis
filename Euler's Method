@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+double func(double x0,double y0)
+{
+    double r=3*x0*x0+1;
+    return r;
+}
+int main()
+{
+    double x0,y0,xn,j,l,h,n,y;
+    cout<<"Enter x0 :";
+    cin>>x0;
+    cout<<"Enter y0 :";
+    cin>>y0;
+    cout<<"Enter  h :";
+    cin>>h;
+    cout<<"Enter xn :";
+    cin>>xn;
+    cout<<"    ----------------------------------------------------"<<endl;
+    n=(xn-x0)/h;
+    for(int i=0;i<n;i++){
+        y=y0+h*func(x0,y0);
+        x0+=h;
+        y0=y;
+        cout<<"Iteration y("<<x0<<"): "<<y<<endl;
+
+    }
+
+}
+// 1 2 .25 2
