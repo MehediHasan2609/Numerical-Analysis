@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+double e=0.001,x0;
+
+
+double func( double x)
+{
+    return x*x+x-2;
+}
+double d_func(double x){
+    return 2*x+1;
+}
+double Newton_raphsm(double x1)
+{
+    int i=0;
+    while(1){
+      x0=x1-(func(x1)/d_func(x1));
+
+      i++;
+      cout<<"Iteration NO "<<i<<" : "<<x0<<endl;
+      if(abs(x1-x0)<e){
+            break;
+      }
+      else{
+        x1=x0;
+      }
+
+   }
+   cout<<"Root is : "<<x0<<endl;
+
+}
+int main()
+{
+    double a;
+    a=0;
+    Newton_raphsm(a);
+
+
+}
