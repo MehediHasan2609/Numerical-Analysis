@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+double e=0.001,x0;
+
+
+double func( double x)
+{
+    return x*x+x-2;
+}
+double bisect(double x1,double x2)
+{
+    if(func(x1)*func(x2)>0){
+        cout<<"NOT progress"<<endl;
+    }
+    int i=0;
+    while(abs((x2-x1)/x2)>e){i++;
+        x0=(x1+x2)/2;
+        if(func(x1)*func(x0)<0){
+            x2=x0;
+        }
+        else{
+            x1=x0;
+        }
+        cout<<"Iteration NO "<<i<<" : "<<x0<<endl;
+    }
+    cout<<"Root is : "<<(x1+x2)/2<<endl;
+
+}
+int main()
+{
+    double a,b;
+    a=-1;b=2;
+    bisect(a,b);
+
+
+}
+
