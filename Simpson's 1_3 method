@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+double func(double x)
+{
+    double r=sqrt(sin(x));
+    return r;
+}
+int main()
+{
+    double a,b,n,x,y,h;
+    cout<<"Enter limit a and b : ";
+    cin>>a>>b;
+    cout<<"Enter n : ";
+    cin>>n;
+    h=(b-a)/n;
+    y=0;
+    for(int i=1;i<=n-1;i++){
+        if(i%2){
+            cout<<4*func(a+i*h)<<endl;
+            y+=4*func(a+i*h);
+        }
+
+        else{
+             y+=2*func(a+i*h);cout<<2*func(a+i*h)<<endl;
+        }
+
+
+
+    }
+    y+=func(a)+func(b);
+    y*=h/3;
+    cout<<"---------------------------"<<endl;
+    cout<<"   I1 :"<<y<<endl;
+
+}
+/* 0 1.5708
+4
+*/
+
